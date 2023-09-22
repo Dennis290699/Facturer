@@ -1,0 +1,202 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.company-info {
+    flex: 1;
+}
+
+.invoice-info {
+    text-align: right;
+}
+
+.company-info h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.company-info p {
+    margin: 5px 0;
+}
+
+.invoice-info p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+#invoice-number,
+#authorization {
+    font-size: 20px;
+    color: #ffcc00;
+}
+
+.customer-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.column {
+    flex: 1;
+    margin-right: 20px; /* Espacio entre columnas */
+}
+
+.column:last-child {
+    margin-right: 0; /* Eliminar el margen de la última columna */
+}
+
+.customer-info label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.customer-info input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.customer-info input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #fff;
+}
+
+
+.product-info h2 {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.row {
+    display: table-row;
+}
+
+.cell {
+    display: table-cell;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.header {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+.row:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.row input[type="text"] {
+    width: 100%;
+    border: none;
+    padding: 5px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.totals-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.totals-left, .totals-right {
+    flex: 1;
+}
+
+.firm {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.firm p {
+    font-weight: bold;
+}
+
+.firm .signature-line {
+    border-top: 1px dotted #333;
+    width: 75%;
+    position: absolute;
+    bottom: 75px; /* Ajusta la posición vertical según sea necesario */
+}
+
+.totals-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.totals-label {
+    flex: 1;
+}
+
+.totals-value {
+    flex: 1;
+    text-align: right;
+}
+
+/* Estilo para los botones */
+input[type="button"] {
+    background-color: #007bff; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: none; /* Quita el borde */
+    padding: 10px 20px; /* Espacio interno */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    font-size: 16px; /* Tamaño del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-right: 10px; /* Espacio entre los botones (puedes ajustarlo) */
+}
+
+/* Estilo para el botón "Descargar Factura" */
+#descargar-btn {
+    background-color: #28a745; /* Cambia el color de fondo para este botón */
+}
+
+/* Estilo para el botón "Calcular" cuando se coloca el mouse sobre él */
+#calcular-btn:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse */
+}
+

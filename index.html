@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+    <link rel="stylesheet" href="./css/style.css"> <!-- Reemplaza "styles.css" con la ruta a tu archivo CSS -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="company-info">
+                <h1>Nombre de la Empresa</h1>
+                <p>RUC: 123456789</p>
+                <p>Dirección: Dirección de la Empresa</p>
+                <p>Ciudad: Ciudad</p>
+                <p>Provincia: Provincia</p>
+                <p>País: País</p>
+            </div>
+            <div class="invoice-info">
+                <p>Factura Nº: <span id="invoice-number">00001</span></p>
+                <p>Autorización: <span id="authorization">9999999999</span></p>
+            </div>
+        </header>
+        <form id="factura-form">
+            <div class="customer-info">
+                <div class="column">
+                    <label for="cliente">Cliente:</label>
+                    <input type="text" id="cliente" name="cliente" required>
+                    
+                    <label for="ruc">RUC:</label>
+                    <input type="text" id="ruc" name="ruc" required>
+                </div>
+                <div class="column">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" id="telefono" name="telefono" required>
+
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" required>
+                </div>
+            </div>
+            <div class="product-info">
+                <h2>Productos</h2>
+                <div class="table">
+                    <div class="row header">
+                        <div class="cell">Cant.</div>
+                        <div class="cell">Detalle</div>
+                        <div class="cell">V.Unit</div>
+                        <div class="cell">V.TOTAL</div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"><input type="text" name="cantidad1"></div>
+                        <div class="cell"><input type="text" name="detalle1"></div>
+                        <div class="cell"><input type="text" name="vunit1"></div>
+                        <div class="cell"><input type="text" name="vtotal1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"><input type="text" name="cantidad2"></div>
+                        <div class="cell"><input type="text" name="detalle2"></div>
+                        <div class="cell"><input type="text" name="vunit2"></div>
+                        <div class="cell"><input type="text" name="vtotal2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"><input type="text" name="cantidad3"></div>
+                        <div class="cell"><input type="text" name="detalle3"></div>
+                        <div class="cell"><input type="text" name="vunit3"></div>
+                        <div class="cell"><input type="text" name="vtotal3"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"><input type="text" name="cantidad4"></div>
+                        <div class="cell"><input type="text" name="detalle4"></div>
+                        <div class="cell"><input type="text" name="vunit4"></div>
+                        <div class="cell"><input type="text" name="vtotal4"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"><input type="text" name="cantidad5"></div>
+                        <div class="cell"><input type="text" name="detalle5"></div>
+                        <div class="cell"><input type="text" name="vunit5"></div>
+                        <div class="cell"><input type="text" name="vtotal5"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"><input type="text" name="cantidad6"></div>
+                        <div class="cell"><input type="text" name="detalle6"></div>
+                        <div class="cell"><input type="text" name="vunit6"></div>
+                        <div class="cell"><input type="text" name="vtotal6"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"><input type="text" name="cantidad7"></div>
+                        <div class="cell"><input type="text" name="detalle7"></div>
+                        <div class="cell"><input type="text" name="vunit7"></div>
+                        <div class="cell"><input type="text" name="vtotal7"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"><input type="text" name="cantidad8"></div>
+                        <div class="cell"><input type="text" name="detalle8"></div>
+                        <div class="cell"><input type="text" name="vunit8"></div>
+                        <div class="cell"><input type="text" name="vtotal8"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"><input type="text" name="cantidad9"></div>
+                        <div class="cell"><input type="text" name="detalle9"></div>
+                        <div class="cell"><input type="text" name="vunit9"></div>
+                        <div class="cell"><input type="text" name="vtotal9"></div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"><input type="text" name="cantidad10"></div>
+                        <div class="cell"><input type="text" name="detalle10"></div>
+                        <div class="cell"><input type="text" name="vunit10"></div>
+                        <div class="cell"><input type="text" name="vtotal10"></div>
+                    </div>
+                    <!-- Puedes agregar más filas de productos aquí -->
+                </div>
+            </div>
+            <div class="totals-section">
+                <div class="totals-left">
+                    <div class="firm">
+                        <p>Firma del Establecimiento:</p>
+                        <canvas id="establecimiento-firma" width="300" height="150"></canvas>
+                        <div class="signature-line"></div>
+                    </div>
+                    <div class="firm">
+                        <p>Firma del Cliente:</p>
+                        <canvas id="cliente-firma" width="300" height="150"></canvas>
+                        <div class="signature-line"></div>
+                    </div>
+                </div>
+                <div class="totals-right">
+                    <div class="totals-row">
+                        <div class="totals-label">Subtotal 12%:</div>
+                        <div class="totals-value" id="subtotal12">0.00</div>
+                    </div>
+                    <div class="totals-row">
+                        <div class="totals-label">Subtotal 0%:</div>
+                        <div class="totals-value" id="subtotal0">0.00</div>
+                    </div>
+                    <div class="totals-row">
+                        <div class="totals-label">Descuento:</div>
+                        <div class="totals-value" id="descuento">0.00</div>
+                    </div>
+                    <div class="totals-row">
+                        <div class="totals-label">SUB TOTAL:</div>
+                        <div class="totals-value" id="subtotal">0.00</div>
+                    </div>
+                    <div class="totals-row">
+                        <div class="totals-label">IVA 12%:</div>
+                        <div class="totals-value" id="iva12">0.00</div>
+                    </div>
+                    <div class="totals-row">
+                        <div class="totals-label">TOTAL US$:</div>
+                        <div class="totals-value" id="total-usd">0.00</div>
+                    </div>
+                </div>
+            </div>
+            <input type="button" id="reset-btn" value="Reset">
+            <input type="button" id="descargar-btn" value="Descargar Factura">
+        </form>
+    </div>
+
+    <script src="./js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.3/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+</body>
+</html>
