@@ -1,42 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./assets/icons/icon-facture.png">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
     <title>Factura</title>
-    <link rel="stylesheet" href="./css/style.css"> <!-- Reemplaza "styles.css" con la ruta a tu archivo CSS -->
 </head>
+
 <body>
     <div class="container">
         <header>
             <div class="company-info">
-                <h1>Nombre de la Empresa</h1>
-                <p>RUC: 123456789</p>
-                <p>Dirección: Dirección de la Empresa</p>
-                <p>Ciudad: Ciudad</p>
-                <p>Provincia: Provincia</p>
-                <p>País: País</p>
+                <label for="company-name"></label>
+                <input type="text" id="company-name" name="company-name" placeholder="Nombre de la Empresa" required>
+
+                <label for="ruc">RUC:</label>
+                <input type="text" id="company-ruc" name="company-ruc" placeholder="RUC de la Empresa" required>
+
+                <label for="company-address">Dirección:</label>
+                <input type="text" id="company-address" name="company-address" placeholder="Dirección de la Empresa"
+                    required>
+
+                <label for="company-region">Región:</label>
+                <input type="text" id="company-region" name="company-region" placeholder="País / Provincia / Ciudad"
+                    required>
             </div>
+
+            <!-- Nueva div para el logo de la empresa -->
+            <div class="company-logo">
+                <label for="logo-upload" class="logo-label">Subir logo aquí</label>
+                <input type="file" id="logo-upload" accept="image/*">
+                <img id="uploaded-logo" src="" alt="">
+                <button id="remove-logo" style="display: none;">Eliminar Logo</button>
+            </div>
+
             <div class="invoice-info">
-                <p>Factura Nº: <span id="invoice-number">00001</span></p>
-                <p>Autorización: <span id="authorization">9999999999</span></p>
+                <label for="invoice-number-input">Factura Nº:</label>
+                <input type="text" id="invoice-number-input" name="invoice-number-input" placeholder="Ej: 00001"
+                    required>
+
+                <label for="authorization-input">Autorización SRI:</label>
+                <input type="text" id="authorization-input" name="authorization-input" placeholder="Ej: 9999999999"
+                    required>
             </div>
+
         </header>
         <form id="factura-form">
             <div class="customer-info">
                 <div class="column">
                     <label for="cliente">Cliente:</label>
-                    <input type="text" id="cliente" name="cliente" required>
-                    
+                    <input type="text" id="cliente" name="cliente" placeholder="Nombre del Cliente" required>
+
                     <label for="ruc">RUC:</label>
-                    <input type="text" id="ruc" name="ruc" required>
+                    <input type="text" id="cliente-ruc" name="cliente-ruc" placeholder="ID del Cliente" required>
                 </div>
                 <div class="column">
                     <label for="telefono">Teléfono:</label>
-                    <input type="text" id="telefono" name="telefono" required>
+                    <input type="text" id="cliente-telefono" name="cliente-telefono" placeholder="Ej: 9999999999"
+                        required>
 
                     <label for="direccion">Dirección:</label>
-                    <input type="text" id="direccion" name="direccion" required>
+                    <input type="text" id="cliente-direccion" name="cliente-direccion"
+                        placeholder="Residencia del Cliente" required>
                 </div>
             </div>
             <div class="product-info">
@@ -84,30 +112,6 @@
                         <div class="cell"><input type="text" name="vunit6"></div>
                         <div class="cell"><input type="text" name="vtotal6"></div>
                     </div>
-                    <div class="row">
-                        <div class="cell"><input type="text" name="cantidad7"></div>
-                        <div class="cell"><input type="text" name="detalle7"></div>
-                        <div class="cell"><input type="text" name="vunit7"></div>
-                        <div class="cell"><input type="text" name="vtotal7"></div>
-                    </div>
-                    <div class="row">
-                        <div class="cell"><input type="text" name="cantidad8"></div>
-                        <div class="cell"><input type="text" name="detalle8"></div>
-                        <div class="cell"><input type="text" name="vunit8"></div>
-                        <div class="cell"><input type="text" name="vtotal8"></div>
-                    </div>
-                    <div class="row">
-                        <div class="cell"><input type="text" name="cantidad9"></div>
-                        <div class="cell"><input type="text" name="detalle9"></div>
-                        <div class="cell"><input type="text" name="vunit9"></div>
-                        <div class="cell"><input type="text" name="vtotal9"></div>
-                    </div>
-                    <div class="row">
-                        <div class="cell"><input type="text" name="cantidad10"></div>
-                        <div class="cell"><input type="text" name="detalle10"></div>
-                        <div class="cell"><input type="text" name="vunit10"></div>
-                        <div class="cell"><input type="text" name="vtotal10"></div>
-                    </div>
                     <!-- Puedes agregar más filas de productos aquí -->
                 </div>
             </div>
@@ -115,12 +119,12 @@
                 <div class="totals-left">
                     <div class="firm">
                         <p>Firma del Establecimiento:</p>
-                        <canvas id="establecimiento-firma" width="300" height="150"></canvas>
+                        <canvas id="establecimiento-firma" width="200" height="100"></canvas>
                         <div class="signature-line"></div>
                     </div>
                     <div class="firm">
                         <p>Firma del Cliente:</p>
-                        <canvas id="cliente-firma" width="300" height="150"></canvas>
+                        <canvas id="cliente-firma" width="200" height="100"></canvas>
                         <div class="signature-line"></div>
                     </div>
                 </div>
@@ -151,14 +155,22 @@
                     </div>
                 </div>
             </div>
-            <input type="button" id="reset-btn" value="Reset">
-            <input type="button" id="descargar-btn" value="Descargar Factura">
         </form>
     </div>
 
+    <div id="preview-modal" class="modal">
+        <div class="modal-content">
+            <!-- Contenido de la vista previa de la factura -->
+
+        </div>
+    </div>
+
+
+    <input type="button" id="reset-btn" value="Limpiar Datos">
+    <input type="button" id="descargar-btn" value="Descargar Factura">
+
     <script src="./js/script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.3/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
 </body>
+
 </html>

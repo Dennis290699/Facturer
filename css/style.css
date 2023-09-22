@@ -1,20 +1,25 @@
+/* Estilo global del cuerpo del documento */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f7f7f7;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
+/* Estilo del contenedor principal */
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    text-align: justify;
     background-color: transparent;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
 }
 
+/* Estilo del encabezado */
 header {
     display: flex;
     justify-content: space-between;
@@ -23,28 +28,103 @@ header {
     color: #333;
     padding: 20px;
     border-radius: 10px;
+    position: relative;
 }
 
+/* Estilo de la caja del logo de la empresa */
+.company-logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+}
+
+.logo-label,
+#remove-logo {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    display: block;
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+.logo-label:hover,
+#remove-logo:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse */
+}
+
+#logo-upload {
+    display: none;
+}
+
+#uploaded-logo {
+    max-width: 100px; /* Ajusta el tamaño máximo del logo según tus necesidades */
+    height: auto;
+    margin: 5px;
+}
+
+/* Estilo de la información de la empresa */
 .company-info {
     flex: 1;
 }
 
+/* Estilos para etiquetas y campos de entrada en la información de la empresa */
+.company-info label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.company-info input[type="text"] {
+    width: 75%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.company-info input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Estilos para números de factura y autorización */
+/* Estilo de la información de la factura */
 .invoice-info {
     text-align: right;
 }
 
-.company-info h1 {
-    font-size: 24px;
-    margin: 0;
-}
-
-.company-info p {
-    margin: 5px 0;
-}
-
-.invoice-info p {
-    margin: 5px 0;
+/* Estilos para etiquetas y campos de entrada en la información de la factura */
+.invoice-info label {
     font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.invoice-info input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.invoice-info input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #fff;
 }
 
 #invoice-number,
@@ -53,6 +133,7 @@ header {
     color: #ffcc00;
 }
 
+/* Estilo de la información del cliente */
 .customer-info {
     display: flex;
     justify-content: space-between;
@@ -92,12 +173,13 @@ header {
     background-color: #fff;
 }
 
-
+/* Estilo de la sección de productos */
 .product-info h2 {
     font-size: 20px;
     margin-top: 20px;
 }
 
+/* Estilo de la tabla de productos */
 .table {
     display: table;
     width: 100%;
@@ -118,12 +200,14 @@ header {
     border: 1px solid #ccc;
 }
 
+/* Estilo de la fila de encabezado de la tabla */
 .header {
     background-color: #007bff;
     color: #fff;
     font-weight: bold;
 }
 
+/* Estilo de las filas pares de la tabla */
 .row:nth-child(even) {
     background-color: #f9f9f9;
 }
@@ -134,21 +218,25 @@ header {
     padding: 5px;
     outline: none;
     box-sizing: border-box;
+    background-color: #f7f7f7;
 }
 
+/* Estilo de la sección de totales */
 .totals-section {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    margin-bottom: -25px;
 }
 
 .totals-left, .totals-right {
     flex: 1;
 }
 
+/* Estilo de la firma */
 .firm {
-    margin-bottom: 20px;
     position: relative;
+    margin-bottom: -30px;
 }
 
 .firm p {
@@ -157,11 +245,12 @@ header {
 
 .firm .signature-line {
     border-top: 1px dotted #333;
-    width: 75%;
+    width: 60%;
     position: absolute;
-    bottom: 75px; /* Ajusta la posición vertical según sea necesario */
+    bottom: 50px; /* Ajusta la posición vertical según sea necesario */
 }
 
+/* Estilo de las filas de totales */
 .totals-row {
     display: flex;
     justify-content: space-between;
@@ -183,11 +272,14 @@ input[type="button"] {
     background-color: #007bff; /* Color de fondo */
     color: #fff; /* Color del texto */
     border: none; /* Quita el borde */
+    margin-top: 25px;
+    margin-bottom: 5vh;
     padding: 10px 20px; /* Espacio interno */
     cursor: pointer; /* Cambia el cursor al pasar el mouse */
     font-size: 16px; /* Tamaño del texto */
     border-radius: 5px; /* Bordes redondeados */
     margin-right: 10px; /* Espacio entre los botones (puedes ajustarlo) */
+    transition: background-color 0.3s; /* Efecto de transición suave */
 }
 
 /* Estilo para el botón "Descargar Factura" */
@@ -195,8 +287,11 @@ input[type="button"] {
     background-color: #28a745; /* Cambia el color de fondo para este botón */
 }
 
-/* Estilo para el botón "Calcular" cuando se coloca el mouse sobre él */
-#calcular-btn:hover {
-    background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse */
+#descargar-btn:hover {
+    background-color: #1d7832; /* Cambia el color de fondo para este botón */
 }
 
+/* Efecto de botón al pasar el mouse */
+input[type="button"]:hover {
+    background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse */
+}
