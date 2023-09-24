@@ -39,11 +39,11 @@ header {
     text-align: center;
 }
 
-.logo-label,
-#remove-logo {
+.logo-label {
     background-color: #007bff;
     color: #fff;
     padding: 5px 10px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     margin: 5px;
@@ -51,9 +51,24 @@ header {
     transition: background-color 0.3s; /* Transición suave del color de fondo */
 }
 
-.logo-label:hover,
-#remove-logo:hover {
+.logo-label:hover {
     background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse */
+}
+
+#remove-logo {
+    background-color: #ff2200;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    display: block;
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+#remove-logo:hover {
+    background-color: #da1d00; /* Cambia el color de fondo al pasar el mouse */
 }
 
 #logo-upload {
@@ -99,6 +114,7 @@ header {
 /* Estilos para números de factura y autorización */
 /* Estilo de la información de la factura */
 .invoice-info {
+    margin-top: 130px;
     text-align: right;
 }
 
@@ -273,7 +289,7 @@ input[type="button"] {
     color: #fff; /* Color del texto */
     border: none; /* Quita el borde */
     margin-top: 25px;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
     padding: 10px 20px; /* Espacio interno */
     cursor: pointer; /* Cambia el cursor al pasar el mouse */
     font-size: 16px; /* Tamaño del texto */

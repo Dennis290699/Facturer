@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
         logoLabel.style.display = 'block';
     });
 
-
     // Agrega un event listener a cada campo de cantidad y valor unitario
     cantidadInputs.forEach((input, index) => {
         input.addEventListener("input", () => {
