@@ -15,7 +15,7 @@ Este proyecto es una plantilla de factura desarrollada utilizando tecnologías w
 
 ## Demo
 
-Puedes probar la aplicación en vivo aquí: [Facturer Demo](https://memory-game-nine-xi.vercel.app/)
+Puedes probar la aplicación en vivo aquí: [Facturer Demo](https://facturer.vercel.app/)
 
 ## Capturas de Pantalla
 
